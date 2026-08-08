@@ -1,0 +1,20 @@
+DALYEF GROUP — CATÁLOGO WEB FINAL
+
+ESTA VERSIÓN:
+- Lee productos reales desde Google Sheets.
+- Usa Foto 1, Foto 2 y Foto 3 conectadas desde Google Drive.
+- Incluye buscador, categorías y galería.
+- Funciona en computador y celular.
+- Actualiza automáticamente cada 5 minutos.
+- También incluye botón Actualizar.
+- No incluye WhatsApp, carrito, favoritos ni pagos.
+
+IMPORTANTE
+La hoja de Google Sheets debe conservar acceso:
+"Cualquier persona con el enlace puede ver".
+
+PARA PROBAR
+1. Descomprime el ZIP.
+2. Abre index.html.
+3. Para funcionamiento completo, publica la carpeta en un hosting web.
+4. El siguiente paso es publicarla y conectar catalogo.gdsimportaciones.com.

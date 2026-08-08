@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fffaf9" />
+  <title>Catálogo Mayorista | DALYEF GROUP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">CATÁLOGO MAYORISTA · DALYEF GROUP</div>
+
+  <header class="site-header">
+    <div class="header-main shell">
+      <button id="mobileMenuBtn" class="icon-btn menu-btn" aria-label="Abrir menú">☰</button>
+
+      <a href="#inicio" class="brand">
+        <img src="assets/logo-dalyef.png" alt="DALYEF GROUP">
+      </a>
+
+      <div class="search desktop-search">
+        <span class="search-icon">⌕</span>
+        <input id="desktopSearch" type="search" placeholder="Buscar por referencia o producto" autocomplete="off">
+      </div>
+
+      <div class="header-meta">
+        <span id="syncStatus">Cargando catálogo…</span>
+        <button id="refreshCatalog" class="refresh-btn" type="button">Actualizar</button>
+      </div>
+    </div>
+
+    <nav id="categoryNav" class="category-nav shell"></nav>
+  </header>
+
+  <aside id="mobileMenu" class="mobile-menu">
+    <div class="mobile-menu-head">
+      <img src="assets/logo-dalyef.png" alt="DALYEF GROUP">
+      <button id="closeMenuBtn" class="icon-btn" aria-label="Cerrar menú">×</button>
+    </div>
+    <div class="mobile-menu-search search">
+      <span class="search-icon">⌕</span>
+      <input id="mobileSearch" type="search" placeholder="Buscar referencia o producto">
+    </div>
+    <div id="mobileCategories" class="mobile-categories"></div>
+  </aside>
+  <div id="menuBackdrop" class="menu-backdrop"></div>
+
+  <main id="inicio">
+    <section class="store-intro shell">
+      <div>
+        <p class="eyebrow">CATÁLOGO MAYORISTA DALYEF</p>
+        <h1>Encuentra tus productos favoritos</h1>
+        <p>Consulta referencias, fotografías y precios actualizados para tus pedidos.</p>
+      </div>
+      <div class="store-count"><strong id="heroCount">0</strong><span>productos disponibles</span></div>
+    </section>
+
+    <section class="category-strip shell">
+      <div class="strip-title">
+        <p>Explora por categoría</p>
+        <span>Selecciona una colección</span>
+      </div>
+      <div id="categoryCards" class="category-cards"></div>
+    </section>
+
+    <section id="productos" class="catalog shell">
+      <div class="catalog-head">
+        <div>
+          <p class="catalog-kicker">CATÁLOGO</p>
+          <h2 id="sectionTitle">Todos los productos</h2>
+        </div>
+        <div class="catalog-count"><strong id="productCount">0</strong> productos</div>
+      </div>
+
+      <div class="mobile-inline-search search">
+        <span class="search-icon">⌕</span>
+        <input id="inlineSearch" type="search" placeholder="Buscar por referencia o nombre">
+      </div>
+
+      <div id="searchSuggestions" class="search-suggestions" hidden></div>
+      <div id="productGrid" class="product-grid"></div>
+
+      <div id="emptyState" class="empty-state" hidden>
+        <span>⌕</span>
+        <h3>No encontramos productos</h3>
+        <p>Prueba con otra referencia, nombre o categoría.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner shell">
+      <img src="assets/logo-dalyef.png" alt="DALYEF GROUP">
+      <p>Catálogo mayorista GDS Importaciones</p>
+    </div>
+  </footer>
+
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card">
+      <button class="modal-close" data-close-modal aria-label="Cerrar">×</button>
+
+      <div class="modal-gallery">
+        <img id="modalImage" src="" alt="">
+        <div class="modal-slider-wrap">
+          <button id="prevPhoto" class="slider-arrow slider-prev" type="button" aria-label="Foto anterior">‹</button>
+          <div id="modalThumbs" class="modal-thumbs"></div>
+          <button id="nextPhoto" class="slider-arrow slider-next" type="button" aria-label="Foto siguiente">›</button>
+        </div>
+        <div id="modalDots" class="modal-dots"></div>
+      </div>
+
+      <div class="modal-copy">
+        <p id="modalCategory" class="modal-category"></p>
+        <h2 id="modalRef"></h2>
+        <p id="modalName" class="modal-name"></p>
+        <p id="modalPrice" class="modal-price"></p>
+        <div class="modal-rule"></div>
+        <p class="modal-note">Precio mayorista sujeto a actualización y disponibilidad.</p>
+      </div>
+    </article>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.getElementById("refreshCatalog")?.addEventListener("click", () => loadProducts(true));
+  </script>
+</body>
+</html>
